@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 64px;
+    overflow-y: scroll;
+}
+
+
+/* Меню */
+.menu-wrapper {
+    width: 744px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu__item {
+    width: 50%;
+    height: 55px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu__item_active {
+    color: #117DC1;
+    background: #EDF9FF;
+}
+
+/* Блок в котором находится весь контент (пользователи/альбомы/фотографии) */
+.content {
+    display: inline-block;
+    width: 744px;
+    color: #1C1C1C;
+    position: relative;
+}
+
+/* Пользователь */
+.users {
+    padding-top: 16px;
+}
+
+.user {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user input[type='checkbox'] {
+    appearance: none;
+    content: url("src/assets/icon_plus.svg");
+    margin-right: 22px;
+}
+
+.user input[type='checkbox']:checked {
+    appearance: none;
+    content: url("src/assets/icon_minus.svg");
+    margin-right: 22px;
+}
+
+.user__button {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 24px 0 24px 0;
+}
+
+
+/* Альбом */
+.album {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.album__button {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 24px 56px;
+}
+
+
+.albums {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Блок в котором находятся фотографии */
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px;
+    padding: 32px 105px;
+}
+
+/* Фотография */
+.photo {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.photo input[type='checkbox'] {
+    appearance: none;
+    content: url("src/assets/icon_star_empty.png");
+    display: block;
+    margin-right: 22px;
+}
+
+.photo input[type='checkbox']:checked {
+    appearance: none;
+    content: url("src/assets/icon_star_active.png");
+}
+
+.photo__icon {
+    position: absolute;
+    top: 8px;
+    right: -14px;
+    cursor: pointer;
+}
+
+.photo img {
+    vertical-align: bottom;
+    border-radius: 4px;
+}
+
+/* Список избранного */
+.fav-photos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px;
+    padding: 56px 105px;
+}
+
+
+/* Избранная фотография */
+.fav-photo {
+    width: 150px;
+    height: 249px;
+    cursor: pointer;
+    position: relative;
+}
+
+.fav-photo input[type='checkbox'] {
+    appearance: none;
+    content: url("src/assets/icon_star_empty.png");
+    margin-right: 22px;
+}
+
+.fav-photo input[type='checkbox']:checked {
+    appearance: none;
+    content: url("src/assets/icon_star_active.png");
+}
+
+
+.fav-photo img {
+    vertical-align: bottom;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.fav-photo__title {
+    color: #787878;
+}
+
+/* Страница "Нет избранных" */
+.favorites_empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 799px;
+}
+
+.favorites_empty .title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.favorites_empty .description {
+    font-size: 18px;
+}
+
+
+/* Класс для скрытия чего-либо */
+.hidden {
+    display: none;
+}
+
+/* Тултип */
+#tooltip {
+    display: none;
+    width: 150px;
+    text-transform: capitalize;
+    font-size: 12px;
+    position: fixed;
+    z-index: 1;
+    padding: 4px 8px;
+    background-color: rgba(0, 0, 0, 0.69);
+    color: #fff;
+    border-radius: 4px;
+    top: 0;
+    left: 0;
+}
+
+/* Лоадер */
+#loader {
+    display: flex;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.47);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Модальное окно с картинкой */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.47);
+}
+
+.modal-content {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    top: 31px;
+    right: 39px;
+}
+
+.close:hover,
+.close:focus {
+    cursor: pointer;
+}
