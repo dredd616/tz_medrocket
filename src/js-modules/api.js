@@ -13,7 +13,6 @@ export const requestsAPI = {
     },
     // Запрос на получение списка фотографий альбома
     getAlbumPhotosList: async (albumId) => {
-        console.log('LOOOG api');
         const response = await fetch(`${BASE_API_URL}/photos?albumId=${albumId}`);
         return response.json()
     },
