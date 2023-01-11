@@ -13,6 +13,9 @@ body {
     overflow-y: scroll;
 }
 
+label {
+    pointer-events: none;
+}
 
 /* Меню */
 .menu-wrapper {
@@ -63,12 +66,14 @@ body {
     appearance: none;
     content: url("src/assets/icon_plus.svg");
     margin-right: 22px;
+    pointer-events: none;
 }
 
 .user input[type='checkbox']:checked {
     appearance: none;
     content: url("src/assets/icon_minus.svg");
     margin-right: 22px;
+    pointer-events: none;
 }
 
 .user__button {
@@ -123,11 +128,13 @@ body {
     content: url("src/assets/icon_star_empty.png");
     display: block;
     margin-right: 22px;
+    pointer-events: none;
 }
 
 .photo input[type='checkbox']:checked {
     appearance: none;
     content: url("src/assets/icon_star_active.png");
+    pointer-events: none;
 }
 
 .photo__icon {

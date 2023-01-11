@@ -44,7 +44,8 @@ export const renderFavorites = async () => {
 
 // Обработка нажатия по пользователю
 const handleUserClick = async (event, user, userId) => {
-    toggleChecked(user.querySelector('input[type=\'checkbox\']'))
+    const checkbox = user.querySelector('input[type=\'checkbox\']');
+    toggleChecked(checkbox)
 
     const albumsPoint = user.querySelector('.albums')
 
@@ -76,6 +77,8 @@ export const setupUserListeners = () => {
         const button = user.querySelector('.user__button')
         button.addEventListener('click', (event) => {
             handleUserClick(event, user, userId)
+            console.log(button)
+            console.log('clicked')
         })
     }
 }

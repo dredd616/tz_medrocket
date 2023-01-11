@@ -15,7 +15,9 @@ export const navMenu = {
 
 // Переключение свойства 'checked'
 export const toggleChecked = (element) => {
+
     element.checked = !element.checked
+    console.log(element.checked)
 }
 
 
