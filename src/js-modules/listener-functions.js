@@ -77,8 +77,6 @@ export const setupUserListeners = () => {
         const button = user.querySelector('.user__button')
         button.addEventListener('click', (event) => {
             handleUserClick(event, user, userId)
-            console.log(button)
-            console.log('clicked')
         })
     }
 }
