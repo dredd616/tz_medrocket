@@ -144,6 +144,8 @@ export const setupPhotoListeners = (albumId, photos) => {
         const photoIconAddToFavorites = photo.querySelector('.photo__icon')
         const currentPhotoData = photos.find(photo => photo.id === photoId);
 
+        console.log(photoIconAddToFavorites)
+
         photoIconAddToFavorites.addEventListener('click', (event) => {
             event.stopPropagation()
             togglePhotoFavorite(currentPhotoData)

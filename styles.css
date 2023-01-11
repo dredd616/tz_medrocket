@@ -128,13 +128,13 @@ label {
     content: url("src/assets/icon_star_empty.png");
     display: block;
     margin-right: 22px;
-    pointer-events: none;
+    pointer-events: all;
 }
 
 .photo input[type='checkbox']:checked {
     appearance: none;
     content: url("src/assets/icon_star_active.png");
-    pointer-events: none;
+    pointer-events: all;
 }
 
 .photo__icon {
